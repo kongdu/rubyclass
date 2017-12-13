@@ -1,0 +1,14 @@
+<!Doctype html>
+<html>
+<head>
+</head>
+<body>
+<% @diary.reverse.each_with_index do |post, idx| %>
+<%= idx+1 %>번째 글<br />
+    제목:<% post[0]%><br />
+    내용:<%= post[1]%>
+    <hr />
+  <% end %>
+  <a href="/"> 홈으로 가기</a>
+</body>
+</html>
