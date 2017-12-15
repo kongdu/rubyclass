@@ -1,0 +1,30 @@
+<!Doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>yeon 블로그</title>
+</head>
+<body>
+<h2>Welcome My Blog</h2>
+<a href="/new">글쓰기 Go</a>
+  <hr />
+<!-- %입력 %=출력 -->
+
+ <% @posts.each do |p| %>
+  <p><%= p.id %> </p>
+  <p><%= p.title %></p>
+  <p><%= p.content %></p>
+  <p><%= p.created_at %></p>
+  <p> <a href="/posts/<%=p.id%>"><%= p.id%>번 글 보기</a></p>
+  <p> <a href ="/destroy/<%= p.id%>">[삭제하기]</a> </p>
+  <p> <a href ="/edit/<%= p.id%>">수정하러 가기</a> </p>
+
+  <p> </p>
+
+    <hr />
+<% end %>
+
+
+
+</body>
+</html>

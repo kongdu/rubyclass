@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>yeon 블로그</title>
+</head>
+<body>
+<h2>Edit Edit</h2>
+<form action="/update/<%=@post.id%>">
+  제목 : <input type="text" name="title" value="<%= @post.title%>"/>
+  내용 : <textarea name ="content"><%=@post.content%> </textarea>
+  <input type="submit" value="빵" />
+</form>
+</body>
+</html>
