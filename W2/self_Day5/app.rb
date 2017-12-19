@@ -1,6 +1,7 @@
 require 'sinatra'
 require 'sinatra/reloader'
 require 'data_mapper'
+require './model.rb'
 
 set :bind, '0.0.0.0'
 
