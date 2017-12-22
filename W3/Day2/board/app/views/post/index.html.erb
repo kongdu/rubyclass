@@ -1,0 +1,44 @@
+<h2>게시판</h2>
+<br />
+<p> <a class="btn btn-primary"  href="/post/new" role="button">글 작성하기</a> </p>
+<hr />
+
+<!-- <% @posts.each do |po| %>
+<p> <%= po.id  %></p>
+<p><%= po.username %> </p>
+<p><%= po.title %> </p>
+<p><%= po.content %> </p>
+<p><%= po.created_at  %> </p>
+<hr />
+<% end%> -->
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">작성자</th>
+      <th scope="col">제목</th>
+      <th scope="col">내용</th>
+      <th scope="col">작성시간</th>
+      <th scope="col">보기</th>
+      <th scope="col">삭제</th>
+      <th scope="col">수정</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @posts.each do |po| %>
+    <tr>
+      <th scope="row"><%= po.id  %></th>
+      <td><%= po.username %> </td>
+      <td><%= po.title %></td>
+      <td><%= po.content[0,10] %></td>
+      <td><%= po.created_at  %></td>
+      <td><a href="/post/show/<%= po.id%>">보기</a></td>
+      <!-- <td><a href="/post/destroy/<%=po.id %>">삭제 </a></td> -->
+      <td><a data-confirm="정말 지울거야?.." data-method="delete" href="/post/destroy/<%= po.id %>">삭제</a></td>
+      <td><a href="/post/edit/<%= po.id%>">수정</a></td>
+    </tr>
+    <% end%>
+  </tbody>
+</table>

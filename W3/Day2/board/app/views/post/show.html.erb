@@ -1,0 +1,20 @@
+<h3>게시판 상세 내용입니다</h3>
+<p> ID : <%=@post.id%> </p>
+<p> 작성자 : <%=@post.username%></p>
+<p> 제목 : <%=@post.title%></p>
+<p> 내용 : <%=@post.content%></p>
+<p> 작성시간 : <%=@post.created_at%></p>
+
+<hr />
+<h4> 댓글을 입력해주세용</h4>
+<form action="/post/add_comment">
+<input type="text" name ="content" palceholder="댓글 입력해주셈"/>
+<input type="hidden" name="id" value="<%= @post.id %>">
+<input type ="submit" />
+</form>
+
+<hr />
+
+<% @post.comments.reverse.each_with_index do |comment, i|%>
+<%=@post.comments.length- i%>번째 댓글 : <p><%= comment.content%> </p>
+<% end%>

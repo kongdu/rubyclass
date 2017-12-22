@@ -1,0 +1,8 @@
+<h2>게시판이오</h2>
+<form action="/post/create" method="post">
+작성자: <input type="text" name="username"/><br />
+제목: <input type="text"  name="title" placeholder="제목을 입력하소"/> <br />
+내용: <input type="text"  name="content"/><br />
+<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token%>"/>
+<input type="submit" class="btn btn-primary" value="빠밤" />
+</form>
